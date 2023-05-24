@@ -1,0 +1,110 @@
+@charset "utf-8";
+* {
+  margin: 20px auto;
+}
+#container {
+  width: 1000px;
+  height: 500px;
+  float: left;
+}
+
+.box1 {
+  width: 50px;
+  height: 50px;
+  background-color: cornflowerblue;
+  animation-name: shape;
+  animation-duration: 3s;
+  /* animation-iteration-count: infinite ;무한재생 */
+}
+@keyframes shape {
+  from {
+    border: 1px solid transparent; /*투명한 테두리1px*/
+  }
+  to {
+    border-radius: 50%;
+    border: 1px solid black;
+  }
+}
+
+.box2 {
+  width: 50px;
+  height: 50px;
+  background-color: rgb(139, 237, 100);
+  animation-name: rotate; /*애니메이션지정*/
+  animation-duration: 5s; /*애니메이션 실행 시간*/
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(90deg) scale(1.5);
+    background-color: rgb(255, 78, 226);
+  }
+}
+
+.box3 {
+  width: 100px;
+  height: 100px;
+  margin: 60px auto;
+  background-color: aquamarine;
+  /* animation-name: moving;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
+    animation: alternate;
+    animation-iteration-count: infinite ;
+     */
+  animation: moving 3s alternate infinite ease-in, background 3s infinite;
+}
+@keyframes moving {
+  from {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(0deg);
+  }
+  to {
+    transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
+  }
+}
+@keyframes background {
+  from {
+    background-color: crimson;
+  }
+  50% {
+    background-color: rgb(20, 220, 120);
+  }
+  to {
+    background-color: rgb(130, 20, 220);
+  }
+}
+
+.box4 {
+  width: 100px;
+  height: 100px;
+  background-color: coral;
+  animation: ani1 1s infinite linear;
+}
+@keyframes ani1 {
+  0% {
+    background-color: cornflowerblue;
+    border-radius: 0 0 0 100px;
+  }
+  25% {
+    background-color: rgb(23, 48, 94);
+    border-radius: 100px 0 0 0;
+  }
+  50% {
+    background-color: rgb(173, 237, 100);
+    border-radius: 0 100px 0 0;
+  }
+  75% {
+    background-color: rgb(237, 143, 100);
+    border-radius: 0 0 100px 0;
+  }
+  100% {
+    background-color: rgb(237, 100, 157);
+    border-radius: 0 0 0 100px;
+  }
+}
